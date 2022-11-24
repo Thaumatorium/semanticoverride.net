@@ -1,0 +1,10 @@
+baseURL: 'http://semanticoverride.net/'
+languageCode: 'en-us'
+title: 'Semantic Override Network | SON'
+subtitle: 'Where the Other Magic happens'
+
+taxonomies:
+  author: 'NostraDavid'
+
+markup.goldmark.renderer:
+  unsafe: true

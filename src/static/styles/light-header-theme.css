@@ -1,0 +1,46 @@
+﻿@import "colors.css";
+
+@media (prefers-color-scheme: light) {
+	body>header {
+		background: #800;
+		background-size: 256px 256px;
+		padding: 30px 0;
+		text-align: center
+	}
+
+	body>header div {
+		color: #fff;
+		font: xxx-large Times, serif;
+		text-transform: uppercase
+	}
+
+	body>header .subtitle {
+		font-size: x-large
+	}
+
+	body>nav {
+		background-color: #940000;
+		box-shadow: 0 5px 5px #555;
+		text-align: center
+	}
+
+	body>nav a {
+		color: #fff;
+		display: inline-block;
+		font: large sans-serif;
+		padding: 8px;
+		text-decoration: none
+	}
+
+	body>nav a:hover {
+		background-color: #fff;
+		color: #800;
+		text-decoration: underline
+	}
+
+	body>nav span {
+		color: #fff;
+		cursor: default;
+		font: large sans-serif
+	}
+}

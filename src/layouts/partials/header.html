@@ -3,4 +3,11 @@
 	<div class=subtitle>Where the <em>other</em> magic happens</div>
 </header>
 
-{{ partial "nav.html" . }}
+<nav>
+	<h5 style="display: none;">Main nav menu</h5>
+	<a href="/">Frontpage</a>
+	{{ $currentPage := . }}
+	{{ range .Site.Menus.main }}
+	<span> - </span><a href="{{ .URL }}">{{ .Name }}</a>
+	{{ end }}
+</nav>

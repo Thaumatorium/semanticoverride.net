@@ -1,0 +1,61 @@
+﻿@import "colors.css";
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--header-title-color: #fff;
+		--header-background-color: #800;
+		--h1-color: #800;
+		--h2-color: #800;
+		--h3-color: #800;
+		--h4-color: #800;
+		--h5-color: #800;
+		--p-color: #000;
+		--a-color: #000;
+		--nav-a-color: #fff;
+		--nav-a-background-color: #fff;
+		--title-color: #000;
+	}
+
+	body>header {
+		background: var(--header-background-color);
+		background-size: 256px 256px;
+		padding: 30px 0;
+		text-align: center
+	}
+
+	body>header div {
+		color: var(--header-title-color);
+		font: xxx-large Times, serif;
+		text-transform: uppercase
+	}
+
+	body>header .subtitle {
+		font-size: x-large
+	}
+
+	body>nav {
+		background-color: var(--main-color-tint1);
+		box-shadow: 0 5px 5px var(--not-as-tint);
+		text-align: center
+	}
+
+	body>nav a {
+		color: var(--nav-a-color);
+		display: inline-block;
+		font: large sans-serif;
+		padding: 8px;
+		text-decoration: none
+	}
+
+	body>nav a:hover {
+		background-color: var(--nav-a-color);
+		color: var(--main-color);
+		text-decoration: underline
+	}
+
+	body>nav span {
+		color: var(--nav-a-color);
+		cursor: default;
+		font: large sans-serif
+	}
+}

@@ -1,0 +1,18 @@
+﻿@import "colors.css";
+
+@media (prefers-color-scheme: dark) {
+	body>footer {
+		border-top: 10px solid var(--main-color-halftint);
+		box-shadow: 0 -5px 5px var(--not-as-tint);
+		display: flex;
+		padding: 30px
+	}
+
+	body>footer>span {
+		flex: 1 1;
+	}
+
+	body>footer .secret {
+		font: small sans-serif
+	}
+}

@@ -1,6 +1,7 @@
 ---
 title: "About"
 description: "About the Semantic Override Network"
+menu: main
 publishDate: 2022-11-20T18:11:19+01:00
 lastmod: 2022-11-20T18:11:19+01:00
 ---

@@ -1,0 +1,3 @@
+[submodule "src/public"]
+	path = src/public
+	url = https://github.com/Thaumatorium/semantic-override-network.git

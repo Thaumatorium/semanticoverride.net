@@ -3,11 +3,11 @@
 	<div class=subtitle>Where the <em>other</em> magic happens</div>
 </header>
 
+{{ $currentPage := . }}
 <nav>
 	<h5 style="display: none;">Main nav menu</h5>
-	<a href="/">Frontpage</a>
-	{{ $currentPage := . }}
+	<a href="{{ .Site.BaseURL }}" >Frontpage</a>
 	{{ range .Site.Menus.main }}
-	<span> - </span><a href="{{ .URL }}">{{ .Name }}</a>
+	<span> - </span><a href="{{ .URL }}" class="{{ if or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}active{{ end }}">{{ .Name }}</a>
 	{{ end }}
 </nav>

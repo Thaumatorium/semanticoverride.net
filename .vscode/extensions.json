@@ -1,0 +1,16 @@
+{
+	"recommendations": [
+		"aaron-bond.better-comments",
+		"aeschli.vscode-css-formatter",
+		"bierner.markdown-mermaid",
+		"bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+		"esbenp.prettier-vscode",
+		"foam.foam-vscode",
+		"oderwat.indent-rainbow",
+		"ritwickdey.liveserver",
+		"vscode-icons-team.vscode-icons",
+		"yzhang.markdown-all-in-one",
+		"zignd.html-css-class-completion",
+		"kortina.vscode-markdown-notes"
+	]
+}

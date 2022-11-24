@@ -1,0 +1,28 @@
+# docs: https://stackoverflow.com/a/29932318/12210524
+
+# ignore root items
+/*
+
+# unignore root files
+!.editorconfig
+!.gitattributes
+!.gitignore
+!404.html
+!CNAME
+!index.html
+!LICENSE
+!manifest.json
+!README.md
+
+# unignore root folders
+!.foam
+!.vscode
+!about
+!cmd
+!code
+!docs
+!img
+!praetorianpi
+!src
+!styles
+!wiki

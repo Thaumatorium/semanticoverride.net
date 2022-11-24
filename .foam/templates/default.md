@@ -1,0 +1,5 @@
+---
+created: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}
+updated: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}
+---
+# ${1:TITLE}

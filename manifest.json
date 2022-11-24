@@ -1,0 +1,27 @@
+{
+	"name": "Semantic Override Network",
+	"short_name": "SON",
+	"description": "Where the OTHER magic happens",
+	"icons": [
+	],
+	"screenshots": [
+	],
+	"categories": [
+		"education",
+		"entertainment",
+		"lifestyle",
+		"news",
+		"productivity",
+		"security",
+		"social",
+		"utilities"
+	],
+	"theme_color": "#880000",
+	"background_color": "#880000",
+	"display": "minimal-ui",
+	"scope": "/",
+	"start_url": "/index.html",
+	"lang": "en-GB",
+	"dir": "auto",
+	"orientation": "any"
+}

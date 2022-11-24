@@ -1,0 +1,20 @@
+<footer>
+	<div class=copyright>
+		©<a href="https://www.youtube.com/watch?v=czgOWmtGVGs" style="text-decoration: none; color: #800;">12022</a>
+		– <a id=target-year href="http://updateyourfooter.com/" style="text-decoration: none; color: #800;">1{{ now.Year }}</a>,
+		<abbr title="Copyright is implicit, almost anywhere in the world! If you want to know more, wikipedia 'Berne Convention'" style="text-decoration: none; color: #800;">Thaumatorium</abbr>
+		{{/* Note about that 2006 date: https://stackoverflow.com/a/42217483/12210524 - lets not add hours/minutes/seconds: 15:04:05 */}}
+		<p><sub>Last updated: <time id=updated>{{ .Lastmod.Format "2006-01-02" }}</time></sub></p>
+	</div>
+	<nav id=profiles>
+		
+	</nav>
+	<!-- Sssh - don't tell anyone! -->
+	<a class=secret onclick=specialGoto(event)>π</a>
+	<script>
+		// Sssh - don't tell anyone!
+		const specialGoto = event => {
+			if (event.ctrlKey && event.shiftKey) window.location.href = "/praetorianpi/";
+		}
+	</script>
+</footer>

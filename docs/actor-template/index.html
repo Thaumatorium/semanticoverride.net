@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Actor Template</title>
+	</head>
+
+	<body>
+		<div>
+			<h1>Explanation of this page</h1>
+			<p>
+				This page is generated using the
+				<a
+					href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"
+					>HTML template element</a
+				>
+			</p>
+			<p>
+				Each chapter is stuck in a <code>div#id</code> and to that div, the data
+				is dynamically added, via previously mentioned <code>template</code>,
+				with a bit of <code>Javascript</code> sprinkled in.
+			</p>
+		</div>
+		<div id="actors">
+			<h1 id="title">ACTOR TEMPLATE</h1>
+
+			<template id="actor_template">
+				<table>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Rolename of the actor as named in the Use Case Diagram"
+							>
+								Role name
+							</abbr>
+						</td>
+						<td class="role_name">[ROLE NAME GOES HERE]</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="In general the role of the actor falls outside of the tasks of a function. A function can contain multiple roles."
+							>
+								Function name
+							</abbr>
+						</td>
+						<td class="function_name">[FUNCTION NAME GOES HERE]</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Often, analysts that create the Use Cases are not familiar with the roles of the actors. By giving a short description of the role, one can give themselves a better idea of the role and to perhaps uncover Use Cases people have overlooked so far. This description describes what the role does with the esystem and thus does not sum up the Use Cases that are assigned to the role."
+							>
+								Role description
+							</abbr>
+						</td>
+						<td class="role_description">[ROLE DESCRIPTION GOES HERE]</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Names of people within the organization that are attached to this role. This list with names can come in handy when creating the Use Case Templates. They *are* the experts of the role, who can tell exactly how a Use Case should go and which attributes could play a role and why."
+							>
+								Exercisers
+							</abbr>
+						</td>
+						<td class="excercisers">[EXECUTORS GOES HERE]</td>
+					</tr>
+				</table>
+				<hr />
+			</template>
+
+			<script>
+				const actors_data = [
+					{
+						role_name: "User",
+						function_name: "post creator",
+						role_description:
+							"This role creates content and reacts to content created by others",
+						excercisers: "Executors goes here?",
+					},
+					{
+						role_name: "Admin",
+						function_name: "Site Administrator",
+						role_description:
+							"Administrates posts that go outside of the set boundaries",
+						excercisers: "Executors goes here?",
+					},
+				];
+
+				let actors = document.querySelector("div#actors");
+				let actor_template = document.querySelector("#actor_template");
+
+				for (let i = 0; i < actors_data.length; i++) {
+					const element = actors_data[i];
+
+					// Clone the new row and insert it into the table
+					let clone = actor_template.content.cloneNode(true);
+					clone.querySelector(".role_name").textContent = element.role_name;
+					clone.querySelector(".function_name").textContent =
+						element.function_name;
+					clone.querySelector(".role_description").textContent =
+						element.role_description;
+					clone.querySelector(".excercisers").textContent = element.excercisers;
+					actors.appendChild(clone);
+				}
+			</script>
+		</div>
+
+		<div id="use_cases">
+			<h1 id="title">USE CASE TEMPLATE</h1>
+			<!-- <details open> -->
+			<details>
+				<summary>UC example with explanatory text</summary>
+				<table>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Use the UC-nnn style within ALL documents for reference"
+							>
+								ID
+							</abbr>
+						</td>
+						<td class="id">UC-001</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr title="Name of the Use Case"> Name </abbr>
+						</td>
+						<td class="name">create comment</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr title="For version control. Range: 0.01-1.00">
+								Version #
+							</abbr>
+						</td>
+						<td class="version">The creation of a user's comment</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Name of the UC's creator, so clearification can be asked if necessary"
+							>
+								Author
+							</abbr>
+						</td>
+						<td class="author">NostraDavid</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What role does the person/system fulfil, which the Main Scenario should follow? Must exist in Actor Template list"
+							>
+								Actor
+							</abbr>
+						</td>
+						<td class="actor">User</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What entails this UC? What should the Actor do? What should the System do? Put (o) for output or (i) for input with each noun (word that identifies objects) where I/O should happen. This Summary only describes the happy flow!"
+							>
+								Summary
+							</abbr>
+						</td>
+						<td class="summary">
+							The actor creates a new comment, usually in reaction to a post or
+							another comment
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Must haves, Should haves, Could haves or Won't haves (or Would haves, alternatively, as they could be interesting for the future!)"
+							>
+								Priority
+							</abbr>
+						</td>
+						<td class="priority">Must have</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What should be the case (other than 'the system must work' or 'the actor must be logged in' (if these preconditions are not the case, the actor wouldn't be able to access the Use Case in the first place)"
+							>
+								Pre Condition
+							</abbr>
+						</td>
+						<td class="pre_condition">none</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="The happy path. Usually in the style of: 1. System asks for..., 2. Actor provides..., 3. System shows..., 4. Actor provides..., 5. System registers..."
+							>
+								Main Scenario (MS)
+							</abbr>
+						</td>
+						<td class="main_scenario">
+							<ol>
+								<li>actor clicks on 'reply' button</li>
+								<li>
+									system opens a new input box somewhere below the reply button
+								</li>
+								<li>actor provides their reaction text in the input box</li>
+								<li>actor clicks on the 'post' button</li>
+								<li>system checks the comment for no-no words</li>
+								<li>system replaces filter words with their counterparts</li>
+								<li>system uploads the reply</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What's the case after the Main Scenario has successfully wrapped up? Has something been registered? Is the system unchanged?"
+							>
+								Post Condition (A0)
+							</abbr>
+						</td>
+						<td class="post_condition">system now contains a new comment</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What happens if step n fails? Which steps should be taken to get back to the Main Scenario? Alternatively, the user can be sent to another Alternative Scenario."
+							>
+								Alternative Scenario (A1)
+							</abbr>
+						</td>
+						<td class="alternative_scenario">
+							<table>
+								<tr>
+									<td>Trigger:</td>
+									<td>After MS4: [CONNECTION LOST]</td>
+								</tr>
+								<tr>
+									<td>Steps:</td>
+									<td>
+										<ol>
+											<li>
+												system shows a notification that the comment could not
+												be sent due to lack of connection
+											</li>
+											<li>
+												system fades the notification over a minute of time
+											</li>
+											<li>Use Case continues after MS3</li>
+										</ol>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Try to create at least two Alternative Scenarios, to prevent yourself from making it too easy."
+							>
+								Alternative Scenario (A2)
+							</abbr>
+						</td>
+						<td class="alternative_scenario">
+							<table>
+								<tr>
+									<td>Trigger:</td>
+									<td>After MS4: [MESSAGE NOT SENT]</td>
+								</tr>
+								<tr>
+									<td>Steps:</td>
+									<td>
+										<ol>
+											<li>
+												system shows a notification that the comment could not
+												be sent due to unknown reasons
+											</li>
+											<li>
+												system fades the notification over a minute of time
+											</li>
+											<li>Use Case continues after MS3</li>
+										</ol>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Try to create at least two Alternative Scenarios, to prevent yourself from making it too easy."
+							>
+								Alternative Scenario (A3)
+							</abbr>
+						</td>
+						<td class="alternative_scenario">
+							<table>
+								<tr>
+									<td>Trigger:</td>
+									<td>After MS5: [NO-NO WORD DETECTED]</td>
+								</tr>
+								<tr>
+									<td>Steps:</td>
+									<td>
+										<ol>
+											<li>
+												system shows a notification that {NO-NO WORD} was
+												detected
+											</li>
+											<li>
+												system shows a notification that if it was a false
+												positive, it's fine to post, but if it's not and the
+												user does it, they'll be punished
+											</li>
+											<li>actor posts comment</li>
+											<li>Use Case continues after MS5</li>
+										</ol>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What is the system's condition after the Use Case as been ended via an Alternative Scenario? Has the system been left unchanged? Has something been removed? Added?"
+							>
+								Post Condition
+							</abbr>
+						</td>
+						<td class="post_condition">comment has been posted</td>
+					</tr>
+				</table>
+			</details>
+			<hr />
+			<template id="use_case_template">
+				<table>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Use the UC-nnn style within ALL documents for reference"
+							>
+								ID
+							</abbr>
+						</td>
+						<td class="id"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr title="Name of the Use Case"> Name </abbr>
+						</td>
+						<td class="name"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr title="For version control. Range: 0.01-1.00">
+								Version #
+							</abbr>
+						</td>
+						<td class="version"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr title="Name of the UC's creator"> Author </abbr>
+						</td>
+						<td class="author"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What role does the person/system fulfil, which the Main Scenario should follow?"
+							>
+								Actor
+							</abbr>
+						</td>
+						<td class="actor"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What entails this UC? What should the Actor do? What should the System do? Put (o) for output or (i) for input with each noun (word that identifies objects) where I/O should happen. This Summary only describes the happy flow!"
+							>
+								Summary
+							</abbr>
+						</td>
+						<td class="summary"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Must haves, Should haves, Could haves or Won't haves (or Would haves, alternatively, as they could be interesting for the future!)"
+							>
+								Priority
+							</abbr>
+						</td>
+						<td class="priority"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What should be the case (other than 'the system must work' or 'the actor must be logged in' (if these preconditions are not the case, the actor wouldn't be able to access the Use Case in the first place)"
+							>
+								Pre Condition
+							</abbr>
+						</td>
+						<td class="pre_condition"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Usually in the style of: 1. System asks for..., 2. Actor provides..., 3. System shows..., 4. Actor provides..., 5. System registers..."
+							>
+								Main Scenario (MS)
+							</abbr>
+						</td>
+						<td class="main_scenario"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What's the case after the Main Scenario has successfully wrapped up? Has something been registered? Is the system unchanged?"
+							>
+								Post Condition (A0)
+							</abbr>
+						</td>
+						<td class="post_condition"></td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What happens if step n fails? Which steps should be taken to get back to the Main Scenario? Alternatively, the user can be sent to another Alternative Scenario."
+							>
+								Alternative Scenario (A1)
+							</abbr>
+						</td>
+						<td class="alternative_scenario">
+							<table>
+								<tr>
+									<!-- Continue here! -->
+									<td>Trigger:</td>
+									<td>After MS2: [ALTERNATIVE SCENARIO]</td>
+								</tr>
+								<tr>
+									<td>Steps:</td>
+									<td>
+										<ol>
+											<li>Step 1</li>
+											<li>Step 2</li>
+											<li>Use Case continues after MS2</li>
+										</ol>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="Try to create at least two Alternative Scenarios, to prevent yourself from making it too easy."
+							>
+								Alternative Scenario (A2)
+							</abbr>
+						</td>
+						<td class="alternative_scenario">
+							<ol>
+								<li>Step 1</li>
+								<li>Step 2</li>
+								<li>Use Case continues after MS2</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td class="description">
+							<abbr
+								title="What is the system's condition after the Use Case as been ended via an Alternative Scenario? Has the system been left unchanged? Has something been removed? Added?"
+							>
+								Post Condition
+							</abbr>
+						</td>
+						<td class="post_condition">
+							[SOME ALTERNATIVE CONDITION WITHIN THE SYSTEM
+						</td>
+					</tr>
+				</table>
+			</template>
+			<script>
+				const use_case_data = [
+					{
+						id: "UC-001",
+						name: "create comment",
+						version: "0.01",
+						author: "NostraDavid",
+						actor: "User",
+						summary:
+							"The actor creates a new comment(i), usually in reaction to a post or another comment",
+						priority: "Must have",
+						pre_condition: "none",
+						main_scenario: [
+							"actor clicks on 'reply' button",
+							"system opens a new input box somewhere below the reply button",
+							"actor provides their reaction text in the input box",
+							"actor clicks on the 'post' button",
+							"system checks the comment for no-no words",
+							"system replaces filter words with their counterparts",
+							"system uploads the reply",
+						],
+						post_condition: "system now contains a new comment",
+						scenarios: [
+							{
+								name: "Alternative Scenario",
+								abbreviation: "A1",
+								steps: {
+									trigger: "After MS4: [CONNECTION LOST]",
+									steps: [
+										"system shows a notification that the comment could not be sent due to lack of connection",
+										"system fades the notification over a minute of time",
+										"Use Case continues after MS3",
+									],
+								},
+							},
+							{
+								name: "Alternative Scenario",
+								abbreviation: "A2",
+								steps: {
+									trigger: "After MS4: [MESSAGE NOT SENT]",
+									steps: [
+										"system shows a notification that the comment could not be sent due to unknown reasons",
+										"system fades the notification over a minute of time",
+										"Use Case continues after MS3",
+									],
+								},
+							},
+							{
+								name: "Alternative Scenario",
+								abbreviation: "A3",
+								steps: {
+									trigger: "After MS5: [NO-NO WORD DETECTED]",
+									steps: [
+										"system shows a notification that {NO-NO WORD} was detected",
+										"system shows a notification that if it was a false positive, it's fine to post, but if it's not and the user does it, they'll be punished",
+										"actor posts comment",
+										"Use Case continues after MS5",
+									],
+								},
+							},
+							{
+								name: "Post Condition",
+								abbreviation: "",
+								steps: ["[some alternative condition within the system]"],
+							},
+						],
+					},
+				];
+
+				const generate_list = (data) => {
+					if (typeof data === "object") {
+						let ol = document.createElement("ol");
+						for (let i = 0; i < data.length; i++) {
+							ol.appendChild(generate_list(data[i]));
+						}
+						return ol;
+					}
+
+					if (typeof data === "string") {
+						const text = document.createTextNode(data);
+						const li = document.createElement("li");
+						li.appendChild(text);
+						return li;
+					}
+				};
+
+				let use_cases = document.querySelector("div#use_cases");
+				let use_case_template = document.querySelector("#use_case_template");
+
+				for (let i = 0; i < use_case_data.length; i++) {
+					const element = use_case_data[i];
+
+					// Clone the new row and insert it into the table
+					let clone = use_case_template.content.cloneNode(true);
+					clone.querySelector(".id").textContent = element.id;
+					clone.querySelector(".name").textContent = element.name;
+					clone.querySelector(".version").textContent = element.version;
+					clone.querySelector(".author").textContent = element.author;
+					clone.querySelector(".actor").textContent = element.actor;
+					clone.querySelector(".summary").textContent = element.summary;
+					clone.querySelector(".priority").textContent = element.priority;
+					clone
+						.querySelector(".pre_condition")
+						.appendChild(generate_list(element.pre_condition));
+					clone
+						.querySelector(".main_scenario")
+						.appendChild(generate_list(element.main_scenario));
+					clone.querySelector(".post_condition").textContent =
+						element.post_condition;
+
+					// clone.querySelector(".scenarios") = element.scenarios;
+					// for (let j = 0; j < element.scenarios.length; j++) {
+					// 	const subelement = element.scenarios[j];
+					// 	// Clone the new row and insert it into the table
+					// 	clone.querySelector(".role_name").textContent = subelement.role_name;
+					// 	clone.querySelector(".function_name").textContent = subelement.function_name;
+					// 	clone.querySelector(".role_description").textContent = subelement.role_description;
+					// 	clone.querySelector(".excercisers").textContent = subelement.excercisers;
+					// 	actors.appendChild(clone);
+					// }
+					use_cases.appendChild(clone);
+				}
+			</script>
+		</div>
+
+		<div id="use_case_summaries">
+			<h1 id="title">USE CASE SUMMARIES</h1>
+			<table>
+				<tr>
+					<td class="description" style="font-weight: bold" title="">UC-#</td>
+					<td class="description" style="font-weight: bold" title="">
+						Use Case
+					</td>
+					<td class="description" style="font-weight: bold">Summary</td>
+				</tr>
+				<tr>
+					<td class="data">UC-001</td>
+					<td class="data">The first one</td>
+					<td class="data">
+						Indeed, it is the first Use case that I've made! Wowee!
+					</td>
+				</tr>
+				<tr>
+					<td class="data">4</td>
+					<td class="data">5</td>
+					<td class="data">6</td>
+				</tr>
+				<tr>
+					<td class="data">7</td>
+					<td class="data">8</td>
+					<td class="data">9</td>
+				</tr>
+				<tr>
+					<td class="data">10</td>
+					<td class="data">11</td>
+					<td class="data">12</td>
+				</tr>
+				<tr>
+					<td class="data">13</td>
+					<td class="data">14</td>
+					<td class="data">15</td>
+				</tr>
+				<tr>
+					<td class="data">16</td>
+					<td class="data">17</td>
+					<td class="data">18</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

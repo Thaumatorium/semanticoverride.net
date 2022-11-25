@@ -1,11 +1,60 @@
 ---
-title: ""
+title: "Semantic Override Network"
 description: "Your personal news accumulator/aggregator/array/assembler/batch/
 menu: main
 bunch/bundle/chunk/cluster/collector/hunk/pack/set/etc"
 publishDate: 2022-11-20T16:49:10+01:00
 lastmod: 2022-11-20T16:49:10+01:00
 ---
-<h1>Welcome!</h1>
+<template id="post">
+	<div class="post">
+		<a id="post-title-anchor"><h1 id="post-title"></h1></a>
+		<p id="post-summary"></p>
+		<hr />
+		<p id="post-top-comment"></p>
+		<a id="post-comments"> comments</a>
+		&nbsp;&mdash;&nbsp;
+		<div id="post-posted">posted: </div>
+		&nbsp;&mdash;&nbsp;
+		<div id="post-published">published: </div>
+		<ul class="post-reactions">
+			<!-- TODO: Move these to the JSON -->
+			<i name="Agree" count={getRandomNumber(25)} />
+			<i name="Artistic" count={getRandomNumber()} />
+			<i name="Disagree" count={getRandomNumber(25)} />
+			<i name="Dumb" count={getRandomNumber(2)} />
+			<i name="Friendly" count={getRandomNumber()} />
+			<i name="Funny" count={getRandomNumber(100)} />
+			<i name="Informative" count={getRandomNumber(40)} />
+			<i name="Late" count={getRandomNumber(1000)} />
+			<i name="Optimistic" count={getRandomNumber()} />
+			<i name="ProgrammingKing" count={getRandomNumber(2)} />
+			<i name="Useful" count={getRandomNumber()} />
+			<i name="Winner" count={getRandomNumber()} />
+			<i name="Zing" count={getRandomNumber(80)} />
+		</ul>
+		<ul id="post-tags"></ul>
+	</div>
+</template>
 
-<p>[LIST OF CONTENT GOES HERE]</p>
+<script>
+	fetch('/data/posts.json')
+  .then(function(response) {
+    return response.json()
+  }).then(function(json) {
+		// lets do one first
+		first = json.posts[0]
+		post = document.getElementById("post").content.cloneNode(true);
+		post.querySelector("#post-title-anchor").href = first.link
+		post.querySelector("#post-title").innerText = first.title
+		post.querySelector("#post-summary").innerText = first.summary
+		post.querySelector("#post-top-comment").innerHTML = first.topComment
+		post.querySelector("#post-posted").innerText = first.postedDate
+		post.querySelector("#post-published").innerText = first.publishedDate
+		// loop over the labels
+		//post.querySelector("#post-tags").innerText = first.publishedDate
+		main = document.querySelector("body > main")
+		main.appendChild(post)
+  })
+
+</script>

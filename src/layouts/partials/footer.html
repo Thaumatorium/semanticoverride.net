@@ -5,6 +5,8 @@
 		<abbr title="Copyright is implicit, almost anywhere in the world! If you want to know more, wikipedia 'Berne Convention'" style="text-decoration: none; color: #800;">Thaumatorium</abbr>
 		{{/* Note about that 2006 date: https://stackoverflow.com/a/42217483/12210524 - lets not add hours/minutes/seconds: 15:04:05 */}}
 		<p><sub>Last updated: <time id=updated>{{ .Lastmod.Format "2006-01-02" }}</time></sub></p>
+		<!-- .Kind can be page, home, section, taxonomy, or term -->
+		<sub>{{.Kind}}</sub>
 	</div>
 	<span></span>
 	<a class=secret onclick=secret(event)>π</a>
